@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiMeter.RavenDB", "ApiMete
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiMeter.Aggregator", "ApiMeter.Aggregator\ApiMeter.Aggregator.csproj", "{B2195882-135A-4EFB-AEC6-6C0B98BCAF11}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiMeter.Core.Tests", "ApiMeter.Core.Tests\ApiMeter.Core.Tests.csproj", "{25EDE308-985B-4D2F-95CA-5A5E1D0AC6B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{B2195882-135A-4EFB-AEC6-6C0B98BCAF11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2195882-135A-4EFB-AEC6-6C0B98BCAF11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2195882-135A-4EFB-AEC6-6C0B98BCAF11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25EDE308-985B-4D2F-95CA-5A5E1D0AC6B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25EDE308-985B-4D2F-95CA-5A5E1D0AC6B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25EDE308-985B-4D2F-95CA-5A5E1D0AC6B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25EDE308-985B-4D2F-95CA-5A5E1D0AC6B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

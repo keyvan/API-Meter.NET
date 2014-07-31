@@ -8,7 +8,7 @@ namespace ApiMeter.Core
     {
         public void WriteRequestResponse(RequestResponseData data)
         {
-            RedisDataProvider dataProvider = new RedisDataProvider();
+            RedisBufferDataProvider dataProvider = new RedisBufferDataProvider();
             dataProvider.Write(data);
         }
     }
