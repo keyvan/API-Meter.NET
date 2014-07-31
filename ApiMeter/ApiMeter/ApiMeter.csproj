@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B2195882-135A-4EFB-AEC6-6C0B98BCAF11}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{2ECE66DD-6F14-4557-A762-BBBDF8F8C705}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ApiMeter.Aggregator</RootNamespace>
-    <AssemblyName>ApiMeter.Aggregator</AssemblyName>
+    <RootNamespace>ApiMeter</RootNamespace>
+    <AssemblyName>ApiMeter</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,33 +30,50 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="kafka-net">
+      <HintPath>..\packages\kafka-net.0.8.0.31-beta\lib\net45\kafka-net.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common">
+      <HintPath>..\packages\ServiceStack.Common.4.0.24\lib\net40\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>..\packages\ServiceStack.Interfaces.4.0.24\lib\net40\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Redis">
+      <HintPath>..\packages\ServiceStack.Redis.4.0.24\lib\net40\ServiceStack.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\packages\ServiceStack.Text.4.0.24\lib\net40\ServiceStack.Text.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiMeterService.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ApiMeterService.Designer.cs">
-      <DependentUpon>ApiMeterService.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Configuration\ApiMeterConfiguration.cs" />
+    <Compile Include="Configuration\IApiMeterConfiguration.cs" />
+    <Compile Include="Domain\RequestResponseData.cs" />
+    <Compile Include="HttpModule\ApiMeterModule.cs" />
+    <Compile Include="MetricProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\BufferProvider\BufferDataProviderBase.cs" />
+    <Compile Include="Providers\BufferProvider\KafkaBufferDataProvider.cs" />
+    <Compile Include="Providers\BufferProvider\RedisBufferDataProvider.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <Folder Include="Providers\StoreProvider\" />
+    <Folder Include="Providers\UserAgentProvider\" />
+    <Folder Include="Rules\" />
+    <Folder Include="Utilities\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ApiMeter\ApiMeter.csproj">
-      <Project>{2ece66dd-6f14-4557-a762-bbbdf8f8c705}</Project>
-      <Name>ApiMeter</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

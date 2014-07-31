@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiMeter.Core", "ApiMeter.Core\ApiMeter.Core.csproj", "{2ECE66DD-6F14-4557-A762-BBBDF8F8C705}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiMeter", "ApiMeter\ApiMeter.csproj", "{2ECE66DD-6F14-4557-A762-BBBDF8F8C705}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiMeter.Web", "ApiMeter.Web\ApiMeter.Web.csproj", "{537F9791-3E8D-4807-9524-E50C06B24E77}"
 EndProject

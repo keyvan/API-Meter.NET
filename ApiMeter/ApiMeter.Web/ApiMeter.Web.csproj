@@ -300,9 +300,9 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ApiMeter.Core\ApiMeter.Core.csproj">
+    <ProjectReference Include="..\ApiMeter\ApiMeter.csproj">
       <Project>{2ece66dd-6f14-4557-a762-bbbdf8f8c705}</Project>
-      <Name>ApiMeter.Core</Name>
+      <Name>ApiMeter</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

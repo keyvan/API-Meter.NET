@@ -167,7 +167,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -185,9 +187,9 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ApiMeter.Core\ApiMeter.Core.csproj">
+    <ProjectReference Include="..\ApiMeter\ApiMeter.csproj">
       <Project>{2ece66dd-6f14-4557-a762-bbbdf8f8c705}</Project>
-      <Name>ApiMeter.Core</Name>
+      <Name>ApiMeter</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

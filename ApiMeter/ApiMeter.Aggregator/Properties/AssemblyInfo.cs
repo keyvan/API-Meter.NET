@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ApiMeter.Aggregator")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("API-Meter.NET Aggregator Service")]
+[assembly: AssemblyDescription("API-Meter.NET aggregator windows service")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ApiMeter.Aggregator")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCompany("API-Meter.NET Team")]
+[assembly: AssemblyProduct("API-Meter.NET")]
+[assembly: AssemblyCopyright("Copyright © 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
