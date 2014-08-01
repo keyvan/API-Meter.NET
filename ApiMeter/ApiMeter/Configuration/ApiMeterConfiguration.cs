@@ -5,7 +5,7 @@ namespace ApiMeter.Configuration
     /// <summary>
     /// Default implementation of configuration interface
     /// </summary>
-    internal class ApiMeterConfiguration : IApiMeterConfiguration
+    public class ApiMeterConfiguration : IApiMeterConfiguration
     {
         private string _configurationFilePath;
 
@@ -75,9 +75,9 @@ namespace ApiMeter.Configuration
         }
 
         /// <summary>
-        /// The interval at which data aggregator service executes (in seconds)
+        /// Port for Redis server
         /// </summary>
-        public int ServiceExecutionInterval
+        public int RedisServerPort
         {
             get
             {

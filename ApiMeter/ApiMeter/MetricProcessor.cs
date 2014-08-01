@@ -1,6 +1,8 @@
 ﻿using ApiMeter.Configuration;
 using ApiMeter.Domain;
 using ApiMeter.Providers.BufferProvider;
+using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace ApiMeter
 {
@@ -16,6 +18,12 @@ namespace ApiMeter
         {
             RedisBufferDataProvider dataProvider = new RedisBufferDataProvider(apiConfiguration);
             dataProvider.Write(data);
+        }
+
+        private void ValidateData(RequestResponseData data)
+        {
+            
+
         }
     }
 }

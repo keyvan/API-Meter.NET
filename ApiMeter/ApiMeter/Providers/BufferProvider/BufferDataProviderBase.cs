@@ -1,5 +1,6 @@
 ﻿using ApiMeter.Configuration;
 using ApiMeter.Domain;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace ApiMeter.Providers.BufferProvider
@@ -24,7 +25,18 @@ namespace ApiMeter.Providers.BufferProvider
         /// Writes request and response raw data to a buffer data storage
         /// </summary>
         /// <param name="data">Data to be stored</param>
-        /// <returns>A completed task</returns>
-        public abstract Task Write(RequestResponseData data);
+        public abstract void Write(RequestResponseData data);
+
+        /// <summary>
+        /// Gets all the available request and response data available on buffer data storage
+        /// </summary>
+        /// <returns>A collection of available request and response data</returns>
+        public abstract IList<RequestResponseData> GetAll();
+
+        /// <summary>
+        /// Deletes a particular request and response data item from buffer data storage
+        /// </summary>
+        /// <param name="data">Data to be deleted</param>
+        public abstract void Delete(RequestResponseData data);
     }
 }

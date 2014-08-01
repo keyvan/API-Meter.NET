@@ -33,6 +33,7 @@ namespace ApiMeter.HttpModule
                 HttpApplication application = sender as HttpApplication;
                 this._data.ID = Guid.NewGuid();
                 this._data.RequestURL = application.Request.RawUrl;
+                this._data.RequestHost = application.Request.Url.Host;
                 this._data.UserAgent = application.Request.UserAgent;
                 this._data.IpAddress = application.Request.UserHostAddress;
                 this._data.HttpRequestVerb = application.Request.RequestType;

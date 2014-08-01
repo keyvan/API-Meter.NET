@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Specialized;
+using System.ComponentModel.DataAnnotations;
 
 namespace ApiMeter.Domain
 {
@@ -12,21 +13,31 @@ namespace ApiMeter.Domain
         /// <summary>
         /// A random GUID given to each request and response pair for identification by API-Meter.NET
         /// </summary>
+        [Required]
         public Guid ID { get; set; }
 
         /// <summary>
         /// Raw request URL
         /// </summary>
+        [Required]
         public string RequestURL { get; set; }
+
+        /// <summary>
+        /// Request's host address
+        /// </summary>
+        [Required]
+        public string RequestHost { get; set; }
 
         /// <summary>
         /// HTTP verb used for request
         /// </summary>
-        public string  HttpRequestVerb { get; set; }
+        [Required]
+        public string HttpRequestVerb { get; set; }
 
         /// <summary>
         /// User agent of request
         /// </summary>
+        [Required]
         public string UserAgent { get; set; }
 
         /// <summary>
@@ -42,11 +53,13 @@ namespace ApiMeter.Domain
         /// <summary>
         /// Major HTTP status code for response
         /// </summary>
+        [Required]
         public int HttpResponseStatusCode { get; set; }
 
         /// <summary>
         /// Minor HTTP status code for response
         /// </summary>
+        [Required]
         public int HttpResponseSubStatusCode { get; set; }
 
         /// <summary>
@@ -67,16 +80,19 @@ namespace ApiMeter.Domain
         /// <summary>
         /// Total miliseconds from the beginning of request to the end of response
         /// </summary>
+        [Required]
         public long ProcessingTime { get; set; }
 
         /// <summary>
         /// Start date and time of request in UTC
         /// </summary>
+        [Required]
         public DateTime RequestStartedUtc { get; set; }
 
         /// <summary>
         /// End date and time of response in UTC
         /// </summary>
+        [Required]
         public DateTime ResponseEndedUtc { get; set; }
     }
 }

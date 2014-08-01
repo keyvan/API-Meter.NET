@@ -27,8 +27,8 @@ namespace ApiMeter.Configuration
         string RedisServerUrl { get; set; }
 
         /// <summary>
-        /// The interval at which data aggregator service executes (in seconds)
+        /// Port for Redis server
         /// </summary>
-        int ServiceExecutionInterval { get; set; }
+        int RedisServerPort { get; set; }
     }
 }

@@ -1,11 +1,7 @@
 ﻿using ApiMeter.Configuration;
 using ApiMeter.Domain;
-using KafkaNet;
-using KafkaNet.Model;
-using KafkaNet.Protocol;
 using System;
-using System.Diagnostics;
-using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace ApiMeter.Providers.BufferProvider
 {
@@ -20,21 +16,27 @@ namespace ApiMeter.Providers.BufferProvider
         /// Sends request and response raw data to Kafka
         /// </summary>
         /// <param name="data">Request and response metrics in raw form</param>
-        /// <returns>A completed task</returns>
-        public override async Task Write(RequestResponseData data)
+        public override void Write(RequestResponseData data)
         {
-            try
-            {
-                KafkaOptions options = new KafkaOptions(new Uri("http://SERVER1:9092"), new Uri("http://SERVER2:9092"));
-                BrokerRouter router = new BrokerRouter(options);
-                Producer client = new Producer(router);
+            throw new NotImplementedException();
+        }
 
-                client.SendMessageAsync("API-Meter Data", new[] { new Message { Value = "NULL for now" } }).Wait();
-            }
-            catch (Exception ex)
-            {
-                Trace.Write(ex.Message);
-            }
+        /// <summary>
+        /// Gets all the available request and response data available from Kafka
+        /// </summary>
+        /// <returns>A collection of available request and response data</returns>
+        public override IList<RequestResponseData> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Deletes a particular request and response data item from Kafka
+        /// </summary>
+        /// <param name="data">Data to be deleted</param>
+        public override async void Delete(RequestResponseData data)
+        {
+            throw new NotImplementedException();
         }
     }
 }
